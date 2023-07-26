@@ -9,7 +9,8 @@
     "dev": "tsnd --transpile-only --watch --respawn --ignore-watch node_modules src/server.ts",
     "test": "vitest --no-watch",
     "prepare": "husky install",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prisma": "npx prisma generate"
   },
   "author": "",
   "license": "MIT",
