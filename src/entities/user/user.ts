@@ -4,7 +4,7 @@ export class User {
     public email!: string;
     public password!: string;
 
-    constructor(props:User, id?:number){
+    constructor(props:User, id?:string){
         Object.assign(this, props)
     }
   }
