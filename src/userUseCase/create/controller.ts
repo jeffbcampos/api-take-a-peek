@@ -14,8 +14,11 @@ export class CreateUserController {
   async handle(request: Request, response: Response): Promise<Response> {
     const { name, email, password } = request.body;                
     try {
-      const verificationUser = await this.verificationUser.userIsValid(name, email, password);            
+      
+      const verificationUser = await this.verificationUser.userIsValid(name, email, password);           
+
       const passwordHash = await this.passwordProvider.hash(password);
+
       await this.useCase.execute({
         name,
         email,
@@ -23,16 +26,16 @@ export class CreateUserController {
       });
 
       return response.status(201).json({ msg: "Usuário criado com sucesso!" });
+
     } catch (error: any) {  
 
       if (error.message === "Usuário já existe") {
         return response.status(409).json({ msg: "Usuário já existe" });
-      } else {
+      } else {                
         return response
         .status(400)
         .json({ msg: `${error.message}` });
-      }
-      
+      }      
     }
   }
 }
