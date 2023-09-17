@@ -9,8 +9,7 @@
     "dev": "tsnd --transpile-only --watch --respawn --ignore-watch node_modules src/server.ts",
     "test": "vitest --no-watch",
     "prepare": "husky install",
-    "lint": "eslint",
-    "prisma": "npx prisma generate"
+    "lint": "eslint"
   },
   "author": "",
   "license": "MIT",
@@ -27,17 +26,17 @@
     "husky": "^8.0.0",
     "lint-staged": "^13.2.0",
     "prettier": "^2.8.7",
-    "prisma": "^5.0.0",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.0.2",
     "vitest": "^0.32.2"
   },
   "dependencies": {
-    "@prisma/client": "^5.0.0",
+    "@prisma/client": "^5.2.0",
     "@types/bcrypt": "^5.0.0",
     "@types/dotenv": "^8.2.0",
-    "bcrypt": "^5.1.0",
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.3"
+    "dotenv": "^16.0.3",
+    "prisma": "^5.2.0"
   }
 }

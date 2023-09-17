@@ -16,3 +16,96 @@ model users {
   email String @unique
   password String
 }
+
+model CompanyEvaluation {
+  dataRegistro     DateTime @map("data_registro")
+  email            String   @unique
+  nomeEmpresa      String   @map("nome_empresa")
+  ramoAtividade    String @map("ramo_atividade")
+  outroRamo        String?  @map("outro_ramo")
+  modeloContratacao String @map("modelo_contratacao")
+  modeloTrabalho   String @map("modelo_trabalho")
+  cargo            String
+  stacksEmpresa String @map("stacks_empresa")
+  stacksOutros     String? @map("stacks_outros")
+  avaliacaoGeral   String @map("avaliacao_geral")
+  ambienteTrabalho String @map("ambiente_trabalho")
+  apoioAssistenciaRh String @map("apoio_assistencia_rh")
+  diversidade      String
+  planoCarreira    String @map("plano_carreira")
+  remuneracao      String
+  treinamento      String
+  beneficios String @map("beneficios") 
+  outrosBeneficios String? @map("outros_beneficios")
+  salario          Float
+  comentarios      String?
+
+  @@map("company_evaluation")
+}
+
+enum RamoAtividade {
+  TECNOLOGIA_INFORMACAO
+  SAUDE_ASSISTENCIA_MEDICA
+  FINANCAS_SERVICOS_FINANCEIROS
+  EDUCACAO_TREINAMENTO
+  MANUFATURA
+  VAREJO_COMERCIO
+  ENERGIA
+  TELECOMUNICACOES
+  INDUSTRIA
+  ALIMENTOS_BEBIDAS
+  OUTRO
+}
+
+enum ModeloContratacao {
+    CLT 
+    PJ 
+    ESTAGIO 
+    JOVEM_APRENDIZ 
+    AUTONOMO 
+}
+
+enum ModeloTrabalho {
+    REMOTO 
+    HIBRIDO 
+    PRESENCIAL 
+}
+
+enum StacksEmpresa {
+    PYTHON 
+    JAVA_SCRIPT 
+    JAVA 
+    C 
+    PHP 
+    SWIFT 
+    KOTLIN 
+    GO 
+    DOCKER 
+    KUBERNETES 
+    KAFKA 
+    RABBIT_MQ 
+    AWS 
+    OUTRO 
+}
+
+enum ProsContraNaoAplica {
+    PROS
+    CONTRA
+    NAO_APLICA
+}
+
+enum Beneficios {
+   AUXILIO_HOME_OFFICE  
+   AUXILIO_TRANSPORTE  
+   HOME_OFFICE  
+   HORARIO_FLEXIVEL  
+   PLANO_SAUDE  
+   PLANO_ODONTOLOGICO  
+   PPR  
+   REFEICAO_LOCAL  
+   SEGURO_VIDA  
+   VALE_ALIMENTACAO  
+   VALE_REFEICAO  
+   OUTRO  
+}
+
